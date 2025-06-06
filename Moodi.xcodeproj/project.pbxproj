@@ -14,6 +14,8 @@
 		EECACF632DF2FC000058FA5C /* MoodiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF622DF2FC000058FA5C /* MoodiTests.swift */; };
 		EECACF6D2DF2FC000058FA5C /* MoodiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF6C2DF2FC000058FA5C /* MoodiUITests.swift */; };
 		EECACF6F2DF2FC000058FA5C /* MoodiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF6E2DF2FC000058FA5C /* MoodiUITestsLaunchTests.swift */; };
+		EECACF802DF2FC570058FA5C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF7F2DF2FC570058FA5C /* Movie.swift */; };
+		EECACF822DF2FCE90058FA5C /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF812DF2FCE90058FA5C /* MovieViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		EECACF682DF2FC000058FA5C /* MoodiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECACF6C2DF2FC000058FA5C /* MoodiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodiUITests.swift; sourceTree = "<group>"; };
 		EECACF6E2DF2FC000058FA5C /* MoodiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EECACF7F2DF2FC570058FA5C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		EECACF812DF2FCE90058FA5C /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,10 @@
 		EECACF502DF2FBFE0058FA5C /* Moodi */ = {
 			isa = PBXGroup;
 			children = (
+				EECACF7E2DF2FC3E0058FA5C /* Services */,
+				EECACF7D2DF2FC360058FA5C /* ViewModels */,
+				EECACF7C2DF2FC2B0058FA5C /* Views */,
+				EECACF7B2DF2FC200058FA5C /* Models */,
 				EECACF512DF2FBFE0058FA5C /* MoodiApp.swift */,
 				EECACF532DF2FBFE0058FA5C /* ContentView.swift */,
 				EECACF552DF2FC000058FA5C /* Assets.xcassets */,
@@ -125,6 +133,36 @@
 				EECACF6E2DF2FC000058FA5C /* MoodiUITestsLaunchTests.swift */,
 			);
 			path = MoodiUITests;
+			sourceTree = "<group>";
+		};
+		EECACF7B2DF2FC200058FA5C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EECACF7F2DF2FC570058FA5C /* Movie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EECACF7C2DF2FC2B0058FA5C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EECACF7D2DF2FC360058FA5C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EECACF812DF2FCE90058FA5C /* MovieViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EECACF7E2DF2FC3E0058FA5C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +297,8 @@
 			files = (
 				EECACF542DF2FBFE0058FA5C /* ContentView.swift in Sources */,
 				EECACF522DF2FBFE0058FA5C /* MoodiApp.swift in Sources */,
+				EECACF802DF2FC570058FA5C /* Movie.swift in Sources */,
+				EECACF822DF2FCE90058FA5C /* MovieViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
