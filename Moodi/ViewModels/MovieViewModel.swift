@@ -53,12 +53,14 @@ class MovieViewModel : ObservableObject {
                do {
                    let decoded = try JSONDecoder().decode(MovieResponse.self, from: data)
                    DispatchQueue.main.async {
+                       let posterBaseURL = "https://image.tmdb.org/t/p/w500"
                        self.movies = decoded.results.map { apiMovie in
-                           Movie(
+                           let posterURL = apiMovie.poster_path != nil ? URL(string: posterBaseURL + apiMovie.poster_path!) : nil
+                           return Movie(
                                id: UUID(),
                                title: apiMovie.title,
                                synopsis: apiMovie.overview,
-                               posterURL: nil
+                               posterURL: posterURL
                            )
                        }
                    }
