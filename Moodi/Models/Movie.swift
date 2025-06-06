@@ -10,7 +10,7 @@ import Foundation
 struct Movie : Identifiable, Codable, Equatable {
     let id: UUID
     let title: String
-    let synospsis: String
+    let synopsis: String
     let imageName: String
     
     static let example = Movie(id: UUID(), title: "Inception", synospsis: "A mind-bending thriller by Christopher Nolan.", imageName: "inception")
