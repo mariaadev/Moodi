@@ -12,25 +12,32 @@ struct MovieCardView: View {
     
     var body: some View {
         VStack {
-            Image(movie.imageName)
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(10)
-                .frame(height: 400)
-            Text(movie.title)
-                .font(.title)
-                .bold()
-            Text(movie.synopsis)
-                .font(.body)
-                .padding()
+                if let url = movie.posterURL {
+                    AsyncImage(url: url) { image in
+                        image.resizable()
+                             .scaledToFit()
+                    } placeholder: {
+                        Color.gray.opacity(0.3)
+                    }
+                    .cornerRadius(10)
+                    .frame(height: 400)
+                } else {
+                    Color.gray.opacity(0.3)
+                        .frame(height: 400)
+                        .cornerRadius(10)
+                }
+
+                Text(movie.title)
+                    .font(.title)
+                    .bold()
+                Text(movie.synopsis)
+                    .font(.body)
+                    .padding()
+            }
+            .background(Color.white)
+            .cornerRadius(20)
+            .shadow(radius: 5)
+            .padding()
         }
-        .background(Color.white)
-        .cornerRadius(20)
-        .shadow(radius: 5)
-        .padding()
-    }
 }
 
-#Preview {
-    MovieCardView(movie: Movie.example)
-}

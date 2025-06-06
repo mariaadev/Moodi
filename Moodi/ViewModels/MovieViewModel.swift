@@ -37,8 +37,9 @@ class MovieViewModel : ObservableObject {
     }
 
     func loadMovies(for mood: Mood) {
-           let genres = mood.genres.joined(separator: ",")
-           guard let url = URL(string: "\(baseURL)/discover/movie?api_key=\(apiKey)&with_genres=\(genres)") else {
+        let genreIds = mood.genres.compactMap { genreNameToId[$0] }
+        let genresString = genreIds.map(String.init).joined(separator: ",")
+        guard let url = URL(string: "\(baseURL)/discover/movie?api_key=\(apiKey)&with_genres=\(genresString)") else {
                print("URL inválida")
                return
            }
@@ -54,10 +55,10 @@ class MovieViewModel : ObservableObject {
                    DispatchQueue.main.async {
                        self.movies = decoded.results.map { apiMovie in
                            Movie(
-                               id: UUID(), // o usar apiMovie.id si lo tienes
+                               id: UUID(),
                                title: apiMovie.title,
                                synopsis: apiMovie.overview,
-                               imageName: "placeholder" // o construir imagen remota si tienes url
+                               posterURL: nil
                            )
                        }
                    }

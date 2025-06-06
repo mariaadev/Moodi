@@ -28,6 +28,7 @@
 		EECACF992DF372150058FA5C /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF982DF372150058FA5C /* MovieResponse.swift */; };
 		EECACF9B2DF3724D0058FA5C /* APIMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF9A2DF3724D0058FA5C /* APIMovie.swift */; };
 		EECACF9E2DF3743B0058FA5C /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF9D2DF3743B0058FA5C /* Secrets.swift */; };
+		EECACFA12DF378FA0058FA5C /* GenreMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACFA02DF378FA0058FA5C /* GenreMapping.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		EECACF982DF372150058FA5C /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
 		EECACF9A2DF3724D0058FA5C /* APIMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMovie.swift; sourceTree = "<group>"; };
 		EECACF9D2DF3743B0058FA5C /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		EECACFA02DF378FA0058FA5C /* GenreMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreMapping.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				EECACF9D2DF3743B0058FA5C /* Secrets.swift */,
+				EECACFA02DF378FA0058FA5C /* GenreMapping.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				EECACF9B2DF3724D0058FA5C /* APIMovie.swift in Sources */,
 				EECACF8D2DF3683E0058FA5C /* SavedMoviesView.swift in Sources */,
 				EECACF862DF300160058FA5C /* MovieCardView.swift in Sources */,
+				EECACFA12DF378FA0058FA5C /* GenreMapping.swift in Sources */,
 				EECACF912DF36B480058FA5C /* MoodSelectionView.swift in Sources */,
 				EECACF522DF2FBFE0058FA5C /* MoodiApp.swift in Sources */,
 				EECACF882DF364740058FA5C /* SwipeView.swift in Sources */,

@@ -42,13 +42,5 @@ struct SwipeView: View {
     }
 }
 
-#Preview {
-    let defaultMood: Mood? = .some(.happy)
 
-    StatefulPreviewWrapper(initialValue: .some(Mood.happy)) { moodBinding in
-        SwipeView(viewModel: MovieViewModel(), selectedMood: moodBinding)
-    }
-
-
-}
 
