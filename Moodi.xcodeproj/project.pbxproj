@@ -18,6 +18,7 @@
 		EECACF822DF2FCE90058FA5C /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF812DF2FCE90058FA5C /* MovieViewModel.swift */; };
 		EECACF862DF300160058FA5C /* MovieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF852DF300160058FA5C /* MovieCardView.swift */; };
 		EECACF882DF364740058FA5C /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF872DF364740058FA5C /* SwipeView.swift */; };
+		EECACF8B2DF3663E0058FA5C /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF8A2DF3663E0058FA5C /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		EECACF812DF2FCE90058FA5C /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		EECACF852DF300160058FA5C /* MovieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardView.swift; sourceTree = "<group>"; };
 		EECACF872DF364740058FA5C /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
+		EECACF8A2DF3663E0058FA5C /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		EECACF502DF2FBFE0058FA5C /* Moodi */ = {
 			isa = PBXGroup;
 			children = (
+				EECACF892DF3662F0058FA5C /* Helpers */,
 				EECACF7E2DF2FC3E0058FA5C /* Services */,
 				EECACF7D2DF2FC360058FA5C /* ViewModels */,
 				EECACF7C2DF2FC2B0058FA5C /* Views */,
@@ -169,6 +172,14 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		EECACF892DF3662F0058FA5C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EECACF8A2DF3663E0058FA5C /* UserDefaults.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +317,7 @@
 				EECACF522DF2FBFE0058FA5C /* MoodiApp.swift in Sources */,
 				EECACF882DF364740058FA5C /* SwipeView.swift in Sources */,
 				EECACF802DF2FC570058FA5C /* Movie.swift in Sources */,
+				EECACF8B2DF3663E0058FA5C /* UserDefaults.swift in Sources */,
 				EECACF822DF2FCE90058FA5C /* MovieViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
