@@ -17,6 +17,7 @@
 		EECACF802DF2FC570058FA5C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF7F2DF2FC570058FA5C /* Movie.swift */; };
 		EECACF822DF2FCE90058FA5C /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF812DF2FCE90058FA5C /* MovieViewModel.swift */; };
 		EECACF862DF300160058FA5C /* MovieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF852DF300160058FA5C /* MovieCardView.swift */; };
+		EECACF882DF364740058FA5C /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF872DF364740058FA5C /* SwipeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		EECACF7F2DF2FC570058FA5C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		EECACF812DF2FCE90058FA5C /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		EECACF852DF300160058FA5C /* MovieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardView.swift; sourceTree = "<group>"; };
+		EECACF872DF364740058FA5C /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				EECACF852DF300160058FA5C /* MovieCardView.swift */,
+				EECACF872DF364740058FA5C /* SwipeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				EECACF542DF2FBFE0058FA5C /* ContentView.swift in Sources */,
 				EECACF862DF300160058FA5C /* MovieCardView.swift in Sources */,
 				EECACF522DF2FBFE0058FA5C /* MoodiApp.swift in Sources */,
+				EECACF882DF364740058FA5C /* SwipeView.swift in Sources */,
 				EECACF802DF2FC570058FA5C /* Movie.swift in Sources */,
 				EECACF822DF2FCE90058FA5C /* MovieViewModel.swift in Sources */,
 			);

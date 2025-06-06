@@ -19,7 +19,7 @@ struct MovieCardView: View {
                 .frame(height: 400)
             Text(movie.title)
                 .font(.title)
-                    .bold()
+                .bold()
             Text(movie.synopsis)
                 .font(.body)
                 .padding()
