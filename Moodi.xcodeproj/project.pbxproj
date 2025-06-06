@@ -19,6 +19,15 @@
 		EECACF862DF300160058FA5C /* MovieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF852DF300160058FA5C /* MovieCardView.swift */; };
 		EECACF882DF364740058FA5C /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF872DF364740058FA5C /* SwipeView.swift */; };
 		EECACF8B2DF3663E0058FA5C /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF8A2DF3663E0058FA5C /* UserDefaults.swift */; };
+		EECACF8D2DF3683E0058FA5C /* SavedMoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF8C2DF3683E0058FA5C /* SavedMoviesView.swift */; };
+		EECACF8F2DF36B0A0058FA5C /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF8E2DF36B0A0058FA5C /* Mood.swift */; };
+		EECACF912DF36B480058FA5C /* MoodSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF902DF36B480058FA5C /* MoodSelectionView.swift */; };
+		EECACF932DF36C0D0058FA5C /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF922DF36C0D0058FA5C /* StatefulPreviewWrapper.swift */; };
+		EECACF952DF36D3D0058FA5C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF942DF36D3D0058FA5C /* RootView.swift */; };
+		EECACF972DF36D870058FA5C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF962DF36D870058FA5C /* MainTabView.swift */; };
+		EECACF992DF372150058FA5C /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF982DF372150058FA5C /* MovieResponse.swift */; };
+		EECACF9B2DF3724D0058FA5C /* APIMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF9A2DF3724D0058FA5C /* APIMovie.swift */; };
+		EECACF9E2DF3743B0058FA5C /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF9D2DF3743B0058FA5C /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +63,15 @@
 		EECACF852DF300160058FA5C /* MovieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardView.swift; sourceTree = "<group>"; };
 		EECACF872DF364740058FA5C /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		EECACF8A2DF3663E0058FA5C /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		EECACF8C2DF3683E0058FA5C /* SavedMoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMoviesView.swift; sourceTree = "<group>"; };
+		EECACF8E2DF36B0A0058FA5C /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		EECACF902DF36B480058FA5C /* MoodSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectionView.swift; sourceTree = "<group>"; };
+		EECACF922DF36C0D0058FA5C /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
+		EECACF942DF36D3D0058FA5C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		EECACF962DF36D870058FA5C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		EECACF982DF372150058FA5C /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
+		EECACF9A2DF3724D0058FA5C /* APIMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMovie.swift; sourceTree = "<group>"; };
+		EECACF9D2DF3743B0058FA5C /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +122,7 @@
 		EECACF502DF2FBFE0058FA5C /* Moodi */ = {
 			isa = PBXGroup;
 			children = (
+				EECACF9C2DF3742C0058FA5C /* Utils */,
 				EECACF892DF3662F0058FA5C /* Helpers */,
 				EECACF7E2DF2FC3E0058FA5C /* Services */,
 				EECACF7D2DF2FC360058FA5C /* ViewModels */,
@@ -146,6 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				EECACF7F2DF2FC570058FA5C /* Movie.swift */,
+				EECACF8E2DF36B0A0058FA5C /* Mood.swift */,
+				EECACF982DF372150058FA5C /* MovieResponse.swift */,
+				EECACF9A2DF3724D0058FA5C /* APIMovie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,6 +177,10 @@
 			children = (
 				EECACF852DF300160058FA5C /* MovieCardView.swift */,
 				EECACF872DF364740058FA5C /* SwipeView.swift */,
+				EECACF8C2DF3683E0058FA5C /* SavedMoviesView.swift */,
+				EECACF902DF36B480058FA5C /* MoodSelectionView.swift */,
+				EECACF942DF36D3D0058FA5C /* RootView.swift */,
+				EECACF962DF36D870058FA5C /* MainTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,8 +204,17 @@
 			isa = PBXGroup;
 			children = (
 				EECACF8A2DF3663E0058FA5C /* UserDefaults.swift */,
+				EECACF922DF36C0D0058FA5C /* StatefulPreviewWrapper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EECACF9C2DF3742C0058FA5C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EECACF9D2DF3743B0058FA5C /* Secrets.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,11 +348,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				EECACF542DF2FBFE0058FA5C /* ContentView.swift in Sources */,
+				EECACF9E2DF3743B0058FA5C /* Secrets.swift in Sources */,
+				EECACF8F2DF36B0A0058FA5C /* Mood.swift in Sources */,
+				EECACF9B2DF3724D0058FA5C /* APIMovie.swift in Sources */,
+				EECACF8D2DF3683E0058FA5C /* SavedMoviesView.swift in Sources */,
 				EECACF862DF300160058FA5C /* MovieCardView.swift in Sources */,
+				EECACF912DF36B480058FA5C /* MoodSelectionView.swift in Sources */,
 				EECACF522DF2FBFE0058FA5C /* MoodiApp.swift in Sources */,
 				EECACF882DF364740058FA5C /* SwipeView.swift in Sources */,
+				EECACF992DF372150058FA5C /* MovieResponse.swift in Sources */,
+				EECACF972DF36D870058FA5C /* MainTabView.swift in Sources */,
 				EECACF802DF2FC570058FA5C /* Movie.swift in Sources */,
+				EECACF952DF36D3D0058FA5C /* RootView.swift in Sources */,
 				EECACF8B2DF3663E0058FA5C /* UserDefaults.swift in Sources */,
+				EECACF932DF36C0D0058FA5C /* StatefulPreviewWrapper.swift in Sources */,
 				EECACF822DF2FCE90058FA5C /* MovieViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

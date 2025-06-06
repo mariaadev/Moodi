@@ -1,0 +1,15 @@
+# Build and intermediate files
+build/
+DerivedData/
+
+# Xcode project files
+*.xcworkspace
+*.xcuserstate
+*.xcuserdata
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# Secrets
+Utils/Secrets.swift
