@@ -16,6 +16,7 @@
 		EECACF6F2DF2FC000058FA5C /* MoodiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF6E2DF2FC000058FA5C /* MoodiUITestsLaunchTests.swift */; };
 		EECACF802DF2FC570058FA5C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF7F2DF2FC570058FA5C /* Movie.swift */; };
 		EECACF822DF2FCE90058FA5C /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF812DF2FCE90058FA5C /* MovieViewModel.swift */; };
+		EECACF862DF300160058FA5C /* MovieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF852DF300160058FA5C /* MovieCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		EECACF6E2DF2FC000058FA5C /* MoodiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EECACF7F2DF2FC570058FA5C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		EECACF812DF2FCE90058FA5C /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		EECACF852DF300160058FA5C /* MovieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		EECACF7C2DF2FC2B0058FA5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EECACF852DF300160058FA5C /* MovieCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EECACF542DF2FBFE0058FA5C /* ContentView.swift in Sources */,
+				EECACF862DF300160058FA5C /* MovieCardView.swift in Sources */,
 				EECACF522DF2FBFE0058FA5C /* MoodiApp.swift in Sources */,
 				EECACF802DF2FC570058FA5C /* Movie.swift in Sources */,
 				EECACF822DF2FCE90058FA5C /* MovieViewModel.swift in Sources */,

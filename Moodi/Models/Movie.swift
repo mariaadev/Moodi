@@ -13,6 +13,6 @@ struct Movie : Identifiable, Codable, Equatable {
     let synopsis: String
     let imageName: String
     
-    static let example = Movie(id: UUID(), title: "Inception", synospsis: "A mind-bending thriller by Christopher Nolan.", imageName: "inception")
+    static let example = Movie(id: UUID(), title: "Inception", synopsis: "A mind-bending thriller by Christopher Nolan.", imageName: "inception")
 }
 

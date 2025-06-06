@@ -34,7 +34,7 @@ class MovieViewModel : ObservableObject {
         movies = [
             Movie(id: UUID(), title: "Inception", synopsis: "A dream within a dream.", imageName: "inception"),
             Movie(id: UUID(), title: "Interstellar", synopsis: "Exploring black holes and time.", imageName: "interstellar"),
-            Movie(id: UUID(), title: "The Matrix", synopsis: "What is real?", imageName: "matrix")
+            Movie(id: UUID(), title: "Memento", synopsis: "A man with no short-term memory hunts for his wife's killer—one clue at a time.", imageName: "memento")
          ]
     }
 }
