@@ -38,7 +38,7 @@ struct SwipeView: View {
                            .cornerRadius(10)
                            .padding(.leading, 10)
                    
-                }
+                } .offset(y:20)
                 .padding()
                 ZStack {
                     ForEach(viewModel.movies.reversed()) { movie in
@@ -56,6 +56,42 @@ struct SwipeView: View {
                             .animation(.spring(), value: viewModel.movies)
                     }
                 }
+                
+                HStack(spacing: 50) {
+                               // Discard button
+                               Button(action: {
+                                   if let current = viewModel.movies.last {
+                                       viewModel.swipeLeft(movie: current)
+                                   }
+                               }) {
+                                   Image("cancel")
+                                       .resizable()
+                                       .scaledToFit()
+                                       .padding(18)
+                                       .frame(width: 60, height: 60)
+                                       .background(Color.terciaryColor)
+                                       .clipShape(Circle())
+                                       .shadow(radius: 4)
+                               }
+
+                               Button(action: {
+                                   if let current = viewModel.movies.last {
+                                       viewModel.swipeRight(movie: current)
+                                   }
+                               }) {
+                                   Image("heart")
+                                       .resizable()
+                                       .scaledToFill()
+                                       .padding(15)
+                                       .frame(width: 60, height: 60)
+                                       .background(Color.terciaryColor)
+                                       .clipShape(Circle())
+                                       .shadow(radius: 4)
+                               }
+                }
+                .offset(y: -30)
+                .padding(.top, 20)
+            
             }
         }
     }
