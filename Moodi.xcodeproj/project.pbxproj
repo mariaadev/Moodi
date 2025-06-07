@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EECACF522DF2FBFE0058FA5C /* MoodiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF512DF2FBFE0058FA5C /* MoodiApp.swift */; };
-		EECACF542DF2FBFE0058FA5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF532DF2FBFE0058FA5C /* ContentView.swift */; };
 		EECACF562DF2FC000058FA5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECACF552DF2FC000058FA5C /* Assets.xcassets */; };
 		EECACF592DF2FC000058FA5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECACF582DF2FC000058FA5C /* Preview Assets.xcassets */; };
 		EECACF632DF2FC000058FA5C /* MoodiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF622DF2FC000058FA5C /* MoodiTests.swift */; };
@@ -37,6 +36,10 @@
 		EECACFB12DF495240058FA5C /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EECACFAD2DF48FDC0058FA5C /* Poppins-Medium.ttf */; };
 		EECACFB22DF495270058FA5C /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EECACFAB2DF48FDC0058FA5C /* Poppins-SemiBold.ttf */; };
 		EECACFB32DF495290058FA5C /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EECACFAC2DF48FDC0058FA5C /* Poppins-Regular.ttf */; };
+		EED449D52DF4A12900719FB1 /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449D42DF4A12900719FB1 /* AppScreen.swift */; };
+		EED449D72DF4A14D00719FB1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449D62DF4A14D00719FB1 /* AppState.swift */; };
+		EED449D92DF4A1D800719FB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449D82DF4A1D800719FB1 /* ContentView.swift */; };
+		EED449DB2DF4A49000719FB1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED449DA2DF4A49000719FB1 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +62,6 @@
 /* Begin PBXFileReference section */
 		EECACF4E2DF2FBFE0058FA5C /* Moodi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECACF512DF2FBFE0058FA5C /* MoodiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodiApp.swift; sourceTree = "<group>"; };
-		EECACF532DF2FBFE0058FA5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EECACF552DF2FC000058FA5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EECACF582DF2FC000058FA5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EECACF5E2DF2FC000058FA5C /* MoodiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,10 @@
 		EECACFAC2DF48FDC0058FA5C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../../../Downloads/Poppins/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		EECACFAD2DF48FDC0058FA5C /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Medium.ttf"; path = "../../../../Downloads/Poppins/Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		EECACFAE2DF490EF0058FA5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EED449D42DF4A12900719FB1 /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
+		EED449D62DF4A14D00719FB1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		EED449D82DF4A1D800719FB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EED449DA2DF4A49000719FB1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +156,6 @@
 				EECACF7C2DF2FC2B0058FA5C /* Views */,
 				EECACF7B2DF2FC200058FA5C /* Models */,
 				EECACF512DF2FBFE0058FA5C /* MoodiApp.swift */,
-				EECACF532DF2FBFE0058FA5C /* ContentView.swift */,
 				EECACF552DF2FC000058FA5C /* Assets.xcassets */,
 				EECACF572DF2FC000058FA5C /* Preview Content */,
 			);
@@ -189,6 +194,7 @@
 				EECACF8E2DF36B0A0058FA5C /* Mood.swift */,
 				EECACF982DF372150058FA5C /* MovieResponse.swift */,
 				EECACF9A2DF3724D0058FA5C /* APIMovie.swift */,
+				EED449D42DF4A12900719FB1 /* AppScreen.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,6 +210,8 @@
 				EECACF962DF36D870058FA5C /* MainTabView.swift */,
 				EECACFA22DF488220058FA5C /* SplashView.swift */,
 				EECACFA42DF48A1E0058FA5C /* IntroScreen.swift */,
+				EED449D82DF4A1D800719FB1 /* ContentView.swift */,
+				EED449DA2DF4A49000719FB1 /* Launch Screen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				EECACF812DF2FCE90058FA5C /* MovieViewModel.swift */,
+				EED449D62DF4A14D00719FB1 /* AppState.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -360,6 +369,7 @@
 			files = (
 				EECACF592DF2FC000058FA5C /* Preview Assets.xcassets in Resources */,
 				EECACFAF2DF4951F0058FA5C /* Poppins-Bold.ttf in Resources */,
+				EED449DB2DF4A49000719FB1 /* Launch Screen.storyboard in Resources */,
 				EECACFB32DF495290058FA5C /* Poppins-Regular.ttf in Resources */,
 				EECACF562DF2FC000058FA5C /* Assets.xcassets in Resources */,
 				EECACFB22DF495270058FA5C /* Poppins-SemiBold.ttf in Resources */,
@@ -389,7 +399,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EECACF542DF2FBFE0058FA5C /* ContentView.swift in Sources */,
 				EECACF9E2DF3743B0058FA5C /* Secrets.swift in Sources */,
 				EECACF8F2DF36B0A0058FA5C /* Mood.swift in Sources */,
 				EECACF9B2DF3724D0058FA5C /* APIMovie.swift in Sources */,
@@ -397,6 +406,7 @@
 				EECACF862DF300160058FA5C /* MovieCardView.swift in Sources */,
 				EECACFA12DF378FA0058FA5C /* GenreMapping.swift in Sources */,
 				EECACF912DF36B480058FA5C /* MoodSelectionView.swift in Sources */,
+				EED449D52DF4A12900719FB1 /* AppScreen.swift in Sources */,
 				EECACF522DF2FBFE0058FA5C /* MoodiApp.swift in Sources */,
 				EECACF882DF364740058FA5C /* SwipeView.swift in Sources */,
 				EECACFA52DF48A1E0058FA5C /* IntroScreen.swift in Sources */,
@@ -405,6 +415,8 @@
 				EECACFA72DF48E030058FA5C /* Color.swift in Sources */,
 				EECACF802DF2FC570058FA5C /* Movie.swift in Sources */,
 				EECACF952DF36D3D0058FA5C /* RootView.swift in Sources */,
+				EED449D92DF4A1D800719FB1 /* ContentView.swift in Sources */,
+				EED449D72DF4A14D00719FB1 /* AppState.swift in Sources */,
 				EECACF8B2DF3663E0058FA5C /* UserDefaults.swift in Sources */,
 				EECACF932DF36C0D0058FA5C /* StatefulPreviewWrapper.swift in Sources */,
 				EECACF822DF2FCE90058FA5C /* MovieViewModel.swift in Sources */,
@@ -578,6 +590,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -607,6 +620,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

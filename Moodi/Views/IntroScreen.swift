@@ -9,6 +9,9 @@ import SwiftUI
 
 struct IntroScreen: View {
     @AppStorage("hasSeenIntro") var hasSeenIntro: Bool = false
+    
+    var onContinue: () -> Void
+    
     var body: some View {
         VStack(spacing: 40) {
                    Spacer()
@@ -25,7 +28,7 @@ struct IntroScreen: View {
 
             
             Button(action: {
-                hasSeenIntro = true
+                onContinue()
             }) {
                 Text("Swipe Movies")
                     .font(.custom("Poppins-Medium", size:16))
@@ -44,5 +47,5 @@ struct IntroScreen: View {
 }
 
 #Preview {
-    IntroScreen()
+    IntroScreen(onContinue: {})
 }

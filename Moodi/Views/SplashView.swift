@@ -17,6 +17,7 @@ struct SplashView: View {
                           .resizable()
                           .scaledToFit()
                           .frame(width: 250, height: 200)
+                      
                   }
               }
           
