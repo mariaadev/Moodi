@@ -10,17 +10,15 @@ import SwiftUI
 struct SplashView: View {
     var body: some View {
         ZStack {
-                  Color.black.ignoresSafeArea()
-
-                  VStack(spacing: 20) {
+            Color.black
                       Image("moodiLogo")
                           .resizable()
                           .scaledToFit()
                           .frame(width: 250, height: 200)
-                      
-                  }
-              }
-          
+                          .padding()
+                    
+                      }
+        .edgesIgnoringSafeArea(.all) 
     }
 }
 
