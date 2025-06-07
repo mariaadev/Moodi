@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "inception.jpg",
+      "filename" : "moodilogox1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "moodilogox2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "moodilogox3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
