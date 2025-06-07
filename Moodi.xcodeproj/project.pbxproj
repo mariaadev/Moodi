@@ -40,6 +40,7 @@
 		EED449D72DF4A14D00719FB1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449D62DF4A14D00719FB1 /* AppState.swift */; };
 		EED449D92DF4A1D800719FB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449D82DF4A1D800719FB1 /* ContentView.swift */; };
 		EED449DB2DF4A49000719FB1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED449DA2DF4A49000719FB1 /* Launch Screen.storyboard */; };
+		EED449DD2DF4C20100719FB1 /* CornerRadiusExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449DC2DF4C20100719FB1 /* CornerRadiusExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		EED449D62DF4A14D00719FB1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		EED449D82DF4A1D800719FB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EED449DA2DF4A49000719FB1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		EED449DC2DF4C20100719FB1 /* CornerRadiusExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				EECACF8A2DF3663E0058FA5C /* UserDefaults.swift */,
 				EECACF922DF36C0D0058FA5C /* StatefulPreviewWrapper.swift */,
 				EECACFA62DF48E030058FA5C /* Color.swift */,
+				EED449DC2DF4C20100719FB1 /* CornerRadiusExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				EECACFA52DF48A1E0058FA5C /* IntroScreen.swift in Sources */,
 				EECACF992DF372150058FA5C /* MovieResponse.swift in Sources */,
 				EECACF972DF36D870058FA5C /* MainTabView.swift in Sources */,
+				EED449DD2DF4C20100719FB1 /* CornerRadiusExtension.swift in Sources */,
 				EECACFA72DF48E030058FA5C /* Color.swift in Sources */,
 				EECACF802DF2FC570058FA5C /* Movie.swift in Sources */,
 				EECACF952DF36D3D0058FA5C /* RootView.swift in Sources */,

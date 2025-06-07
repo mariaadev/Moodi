@@ -9,30 +9,52 @@ import SwiftUI
 
 struct MovieCardView: View {
     let movie : Movie
+    @State private var showDetails = false
     
     var body: some View {
         VStack {
                 if let url = movie.posterURL {
                     AsyncImage(url: url) { image in
-                        image.resizable()
-                             .scaledToFit()
+                        image
+                            .resizable()
+                            .scaledToFill()
                     } placeholder: {
                         Color.gray.opacity(0.3)
                     }
-                    .cornerRadius(10)
-                    .frame(height: 400)
+                    .frame(width: 300, height: 400)
+                    .clipped()
+                    .cornerRadius(10, corners: [.topLeft, .topRight])
                 } else {
                     Color.gray.opacity(0.3)
-                        .frame(height: 400)
-                        .cornerRadius(10)
+                        .frame(width: 300, height: 400)
+                        .cornerRadius(10, corners: [.topLeft, .topRight])
                 }
 
-                Text(movie.title)
-                    .font(.title)
-                    .bold()
-                Text(movie.synopsis)
-                    .font(.body)
-                    .padding()
+            VStack(alignment: .leading, spacing: 8) {
+                           Text(movie.title)
+                               .font(.title3)
+                               .bold()
+                           
+                           Text(movie.synopsis)
+                               .font(.body)
+                               .lineLimit(3)
+                           
+                           Button(action: {
+                               showDetails = true
+                           }) {
+                               Text("Read more")
+                                   .font(.caption)
+                                   .foregroundColor(Color.primaryColor)
+                                   .padding(.top, 4)
+                           }
+                           .sheet(isPresented: $showDetails) {
+                               //MovieDetailView(movie: movie)
+                           }
+                       }
+                       .padding()
+                       .frame(maxWidth: 300, alignment: .leading)
+                       .background(Color.gray.opacity(0.1))
+                       .cornerRadius(10, corners: [.bottomLeft, .bottomRight])
             }
             .background(Color.white)
             .cornerRadius(20)
@@ -41,3 +63,11 @@ struct MovieCardView: View {
         }
 }
 
+#Preview {
+    MovieCardView(movie: Movie(
+        id: UUID(),
+        title: "Inception",
+        synopsis: "A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
+        posterURL: URL(string: "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg")
+    ))
+}
