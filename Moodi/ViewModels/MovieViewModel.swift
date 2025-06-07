@@ -57,10 +57,10 @@ class MovieViewModel : ObservableObject {
                        self.movies = decoded.results.map { apiMovie in
                            let posterURL = apiMovie.poster_path != nil ? URL(string: posterBaseURL + apiMovie.poster_path!) : nil
                            return Movie(
-                               id: UUID(),
-                               title: apiMovie.title,
-                               synopsis: apiMovie.overview,
-                               posterURL: posterURL
+                                id: apiMovie.id,
+                                title: apiMovie.title,
+                                synopsis: apiMovie.overview,
+                                posterURL: posterURL
                            )
                        }
                    }

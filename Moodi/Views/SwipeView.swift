@@ -11,7 +11,9 @@ struct SwipeView: View {
     @ObservedObject var viewModel: MovieViewModel
     @Binding var selectedMood: Mood?
     @State private var showingSelection = false
-    
+    @State private var dragOffset: CGSize = .zero
+    @State private var isAnimating = false
+
     var body: some View {
         ZStack {
             Color.backgroundColor
@@ -41,15 +43,26 @@ struct SwipeView: View {
                 } .offset(y:20)
                 .padding()
                 ZStack {
-                    ForEach(viewModel.movies.reversed()) { movie in
-                        MovieCardView(movie: movie)
+                    ForEach(viewModel.movies.dropLast(), id: \.id) { movie in
+                          MovieCardView(movie: movie)
+                      }
+                    if let topMovie = viewModel.movies.last {
+                        MovieCardView(movie: topMovie)
+                            .offset(dragOffset)
                             .gesture(
                                 DragGesture()
+                                    .onChanged { value in
+                                                       dragOffset = value.translation
+                                    }
                                     .onEnded { value in
                                         if value.translation.width > 100 {
-                                            viewModel.swipeRight(movie: movie)
-                                        } else if value.translation.width < -100{
-                                            viewModel.swipeLeft(movie: movie)
+                                            animateSwipe(.right, topMovie)
+                                        } else if value.translation.width < -100 {
+                                            animateSwipe(.left, topMovie)
+                                        } else {
+                                            withAnimation {
+                                                dragOffset = .zero
+                                            }
                                         }
                                     }
                             )
@@ -58,11 +71,11 @@ struct SwipeView: View {
                 }
                 
                 HStack(spacing: 50) {
-                               // Discard button
+                              
                                Button(action: {
                                    if let current = viewModel.movies.last {
-                                       viewModel.swipeLeft(movie: current)
-                                   }
+                                           animateSwipe(.left, current)
+                                       }
                                }) {
                                    Image("cancel")
                                        .resizable()
@@ -76,8 +89,9 @@ struct SwipeView: View {
 
                                Button(action: {
                                    if let current = viewModel.movies.last {
-                                       viewModel.swipeRight(movie: current)
-                                   }
+                                          animateSwipe(.right, current)
+                                      }
+                                      
                                }) {
                                    Image("heart")
                                        .resizable()
@@ -95,6 +109,39 @@ struct SwipeView: View {
             }
         }
     }
+    
+    func animateSwipe(_ direction: SwipeDirection, _ movie: Movie) {
+        guard !isAnimating else { return }
+        isAnimating = true
+        
+        // Calcula la dirección de salida
+        let exitOffset = CGSize(width: direction == .right ? 1000 : -1000, height: 0)
+        
+        // Aplica la animación
+        withAnimation(.easeInOut(duration: 0.3)) {
+            dragOffset = exitOffset
+        }
+        
+        // Después del tiempo de animación, eliminamos la tarjeta
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            // Aquí eliminamos la película del arreglo
+            if direction == .right {
+                viewModel.swipeRight(movie: movie)
+            } else {
+                viewModel.swipeLeft(movie: movie)
+            }
+            
+            // IMPORTANTE: Solo reiniciamos offset *después* de eliminar la tarjeta
+            dragOffset = .zero
+            isAnimating = false
+        }
+    }
+
+
+    enum SwipeDirection {
+        case left, right
+    }
+
 }
 
 

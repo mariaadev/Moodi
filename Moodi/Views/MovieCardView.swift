@@ -66,7 +66,7 @@ struct MovieCardView: View {
 
 #Preview {
     MovieCardView(movie: Movie(
-        id: UUID(),
+        id: 1,
         title: "Inception",
         synopsis: "A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
         posterURL: URL(string: "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg")
