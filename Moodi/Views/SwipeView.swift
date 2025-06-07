@@ -17,7 +17,7 @@ struct SwipeView: View {
             Color.backgroundColor
                    .ignoresSafeArea()
             VStack {
-                HStack {
+                HStack(spacing: 100) {
                    
                     Button(action: {
                             selectedMood = nil
@@ -30,7 +30,6 @@ struct SwipeView: View {
                                .cornerRadius(10)
                        }
                       
-                       Spacer()
                        Text(selectedMood?.rawValue.capitalized ?? "No Mood")
                            .font(.custom("Poppins-Medium", size: 16))
                            .frame(width: 124, height: 40)

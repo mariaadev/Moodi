@@ -21,12 +21,12 @@ struct MovieCardView: View {
                     } placeholder: {
                         Color.gray.opacity(0.3)
                     }
-                    .frame(width: 300, height: 400)
+                    .frame(width: 301, height: 400)
                     .clipped()
                     .cornerRadius(10, corners: [.topLeft, .topRight])
                 } else {
                     Color.gray.opacity(0.3)
-                        .frame(width: 300, height: 400)
+                        .frame(width: 301, height: 400)
                         .cornerRadius(10, corners: [.topLeft, .topRight])
                 }
 
@@ -52,15 +52,16 @@ struct MovieCardView: View {
                            }
                        }
                        .padding()
-                       .frame(maxWidth: 300, alignment: .leading)
+                       .frame(width: 301, height: 151, alignment: .topLeading)
                        .background(Color.gray.opacity(0.1))
                        .cornerRadius(10, corners: [.bottomLeft, .bottomRight])
             }
+            .frame(width: 301, height: 551)
             .background(Color.white)
             .cornerRadius(20)
             .shadow(radius: 5)
             .padding()
-        }
+    }
 }
 
 #Preview {
