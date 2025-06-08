@@ -103,6 +103,7 @@ struct MovieDetailView: View {
                             } else {
                                 Color.gray.frame(width: 60, height: 60)
                             }
+                            
                             Text(prov.provider_name)
                                 .font(.caption)
                                 .multilineTextAlignment(.center)
@@ -116,8 +117,8 @@ struct MovieDetailView: View {
 
     func loadAllData() {
         Task {
-            async let d = fetchDetail()
-            async let p = fetchProviders()
+            async let d: () = fetchDetail()
+            async let p: () = fetchProviders()
             _ = await (d, p)
             isLoading = false
         }
@@ -137,10 +138,14 @@ struct MovieDetailView: View {
         let urlStr = "https://api.themoviedb.org/3/movie/\(movieId)/watch/providers?api_key=\(Secrets.tmdbApiKey)"
         guard let url = URL(string: urlStr),
               let (data, _) = try? await URLSession.shared.data(from: url),
-              let decoded = try? JSONDecoder().decode(WatchProvidersResponse.self, from: data),
-              let countryProviders = decoded.results["ES"] ?? decoded.results["US"] else {
+              let decoded = try? JSONDecoder().decode(WatchProvidersResponse.self, from: data)
+             else {
             return
         }
+        
+        let userCountryCode = Locale.current.region?.identifier ?? "US"
+        let countryProviders = decoded.results[userCountryCode] ?? decoded.results["US"]
+
         providers = countryProviders
     }
 
