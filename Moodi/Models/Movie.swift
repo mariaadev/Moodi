@@ -12,5 +12,6 @@ struct Movie : Identifiable, Codable, Equatable {
     let title: String
     let synopsis: String
     let posterURL: URL?
+    let genres: [String]?
 }
 

@@ -133,12 +133,14 @@ class MovieViewModel : ObservableObject {
                      !apiMovie.overview.isEmpty,
                      apiMovie.poster_path != nil else { return nil }
                
-               let posterURL = URL(string: posterBaseURL + apiMovie.poster_path!)
+            let posterURL = URL(string: posterBaseURL + apiMovie.poster_path!)
+               let movieGenres = apiMovie.genre_ids.compactMap { genreIdToName[$0] }
                return Movie(
                    id: apiMovie.id,
                    title: apiMovie.title,
                    synopsis: apiMovie.overview,
-                   posterURL: posterURL
+                   posterURL: posterURL,
+                   genres: movieGenres
                )
            }
            
@@ -169,4 +171,11 @@ class MovieViewModel : ObservableObject {
            
            loadMoviesFromAPI(mood: mood, page: 1, isInitialLoad: true)
        }
+    
+    func resetLikedMovies() {
+        let likedIds = Set(likedMovies.map { $0.id })
+        likedMovies.removeAll()
+        UserDefaults.standard.saveLikedMovies(likedMovies)
+        allSeenMovieIds = allSeenMovieIds.subtracting(likedIds)
+    }
 }

@@ -12,4 +12,5 @@ struct APIMovie: Codable {
     let title: String
     let overview: String
     let poster_path: String?
+    let genre_ids: [Int]
 }
