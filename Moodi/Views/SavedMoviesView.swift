@@ -11,7 +11,8 @@ struct SavedMoviesView: View {
     @ObservedObject var viewModel: MovieViewModel
     @State private var showingResetAlert = false
     @State private var selectedMood: Mood? = nil
-    
+    @State private var selectedMovie: Movie? = nil
+
     private let columns = [
           GridItem(.flexible()),
           GridItem(.flexible())
@@ -40,6 +41,10 @@ struct SavedMoviesView: View {
                     .background(Color.black)
                     .navigationBarHidden(true)
                 }
+                .sheet(item: $selectedMovie) { movie in
+                    MovieDetailView(movieId: movie.id)
+                }
+
                 .alert("Reset Liked Movies", isPresented: $showingResetAlert) {
                     Button("Cancel", role: .cancel) { }
                     Button("Reset", role: .destructive) {
@@ -150,32 +155,39 @@ struct SavedMoviesView: View {
             private var movieGrid: some View {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(filteredMovies) { movie in
-                        moviePosterView(for: movie)
+                        NavigationLink(destination: MovieDetailView(movieId: movie.id)) {
+                            moviePosterView(for: movie)
+                          }
+                          .buttonStyle(PlainButtonStyle())
                     }
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 20)
             }
             
-            private func moviePosterView(for movie: Movie) -> some View {
-                AsyncImage(url: movie.posterURL) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(2/3, contentMode: .fill)
-                } placeholder: {
-                    Rectangle()
-                        .fill(Color.gray.opacity(0.3))
-                        .aspectRatio(2/3, contentMode: .fill)
-                        .overlay(
-                            Text(movie.title)
-                                .font(.caption)
-                                .multilineTextAlignment(.center)
-                                .padding(8)
-                                .foregroundColor(.white)
-                        )
-                }
-                .clipShape(RoundedRectangle(cornerRadius: 8))
+    private func moviePosterView(for movie: Movie) -> some View {
+        Button {
+            selectedMovie = movie
+        } label: {
+            AsyncImage(url: movie.posterURL) { image in
+                image
+                    .resizable()
+                    .aspectRatio(2/3, contentMode: .fill)
+            } placeholder: {
+                Rectangle()
+                    .fill(Color.gray.opacity(0.3))
+                    .aspectRatio(2/3, contentMode: .fill)
+                    .overlay(
+                        Text(movie.title)
+                            .font(.caption)
+                            .multilineTextAlignment(.center)
+                            .padding(8)
+                            .foregroundColor(.white)
+                    )
             }
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+        }
+        }
     }
 
 

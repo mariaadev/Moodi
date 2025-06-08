@@ -80,6 +80,7 @@ struct MovieDetailView: View {
         }
         
         .onAppear(perform: loadAllData)
+      
     }
 
     @ViewBuilder
