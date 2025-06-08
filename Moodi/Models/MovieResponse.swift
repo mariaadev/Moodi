@@ -9,4 +9,7 @@ import Foundation
 
 struct MovieResponse: Codable {
     let results: [APIMovie]
+    let page: Int
+    let total_pages: Int
+    let total_results: Int
 }
