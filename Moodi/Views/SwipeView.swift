@@ -44,52 +44,51 @@ struct SwipeView: View {
                 } .offset(y:20)
                 .padding()
                 ZStack {
-                    ForEach(Array(viewModel.movies.enumerated().reversed()), id: \.element.id) { index, movie in
-                                           if index < viewModel.movies.count - 1 {
-                                               MovieCardView(movie: movie)
-                                                   .scaleEffect(1.0 - CGFloat(viewModel.movies.count - 1 - index) * 0.05)
-                                                   .opacity(1.0 - Double(viewModel.movies.count - 1 - index) * 0.1)
-                                                   .offset(y: CGFloat(viewModel.movies.count - 1 - index) * 5)
-                                           }
-                                       }
-                    if let topMovie = viewModel.movies.last {
-                        MovieCardView(movie: topMovie)
-                            .offset(dragOffset)
-                            .rotationEffect(.degrees(rotationAngle))
-                            .opacity(abs(dragOffset.width) > 150 ? 0.7 : 1.0)
+                    ForEach(Array(viewModel.movies.suffix(3).enumerated()), id: \.element.id) { index, movie in
+                        let cardIndex = viewModel.movies.suffix(3).count - 1 - index
+                        let isTopCard = cardIndex == 0
+                                      
+                        MovieCardView(movie: movie)
+                            .scaleEffect(isTopCard ? 1.0 : 1.0 - CGFloat(cardIndex) * 0.03)
+                            .opacity(1.0)
+                            .offset(
+                                x: isTopCard ? dragOffset.width : 0,
+                                y: isTopCard ? dragOffset.height : CGFloat(cardIndex) * 3
+                                          )
+                            .rotationEffect(.degrees(isTopCard ? rotationAngle : 0))
+                            .zIndex(isTopCard ? 10 : Double(10 - cardIndex))
+                            .animation(
+                                isTopCard && !isAnimating ? .none : .spring(response: 0.4, dampingFraction: 0.8),
+                                value: dragOffset
+                            )
                             .gesture(
+                                isTopCard ?
                                 DragGesture()
                                     .onChanged { value in
-                                                                            guard !isAnimating else { return }
-                                                                            dragOffset = value.translation
-                                                                            // Añadir rotación basada en el drag
-                                                                            rotationAngle = Double(value.translation.width / 10)
-                                                                        }
-                                                                        .onEnded { value in
-                                                                            guard !isAnimating else { return }
-                                                                            
-                                                                            let threshold: CGFloat = 100
-                                                                            
-                                                                            if value.translation.width > threshold {
-                                                                                
-                                                                                animateSwipe(.right, topMovie)
-                                                                            } else if value.translation.width < -threshold {
-                                                                                animateSwipe(.left, topMovie)
-                                                                            } else {
-                                                                               
-                                                                                withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                                                                                    dragOffset = .zero
-                                                                                    rotationAngle = 0
-                                                                                }
-                                                                            }
-                                                                        }
-                            )
-                            .zIndex(1)
-                    }
-                }
-                
-                HStack(spacing: 50) {
-                              
+                                        guard !isAnimating else { return }
+                                        dragOffset = value.translation
+                                        rotationAngle = Double(value.translation.width / 10)
+                                    }
+                                    .onEnded { value in
+                                        guard !isAnimating else { return }
+                                        let threshold: CGFloat = 100
+                                        if value.translation.width > threshold {
+                                            animateSwipe(.right, movie)
+                                        } else if value.translation.width < -threshold {
+                                            animateSwipe(.left, movie)
+                                        } else {
+                                            withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                                                dragOffset = .zero
+                                                rotationAngle = 0
+                                            }
+                                        }
+                                    }
+                                    : nil
+                                    )
+                                }
+                        }
+                        .frame(height: 600)
+                        HStack(spacing: 50) {
                                Button(action: {
                                    guard let current = viewModel.movies.last, !isAnimating else { return }
                                                         animateSwipe(.left, current)
