@@ -32,32 +32,33 @@ struct MovieCardView: View {
 
             VStack(alignment: .leading, spacing: 8) {
                            Text(movie.title)
-                               .font(.title3)
-                               .bold()
+                            .font(.custom("Poppins-Medium", size:16))
+                            .foregroundColor(Color.textColor)
                            
                            Text(movie.synopsis)
-                               .font(.body)
-                               .lineLimit(3)
+                            .font(.custom("Poppins-Light", size:12))
+                            .lineLimit(4)
+                            .foregroundColor(Color.textColor)
                            
                            Button(action: {
                                showDetails = true
                            }) {
                                Text("Read more")
-                                   .font(.caption)
-                                   .foregroundColor(Color.primaryColor)
+                                   .font(.custom("Poppins-Light", size:10))
+                                   .foregroundColor(.blue)
                                    .padding(.top, 4)
                            }
                            .sheet(isPresented: $showDetails) {
-                               //MovieDetailView(movie: movie)
+                               MovieDetailView(movieId: movie.id)
                            }
                        }
                        .padding()
                        .frame(width: 301, height: 151, alignment: .topLeading)
-                       .background(Color.gray.opacity(0.1))
+                       .background(Color.terciaryColor.opacity(0.1))
                        .cornerRadius(10, corners: [.bottomLeft, .bottomRight])
             }
             .frame(width: 301, height: 551)
-            .background(Color.white)
+            .background(Color.terciaryColor)
             .cornerRadius(20)
             .shadow(radius: 5)
             .padding()

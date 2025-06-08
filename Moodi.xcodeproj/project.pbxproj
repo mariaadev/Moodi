@@ -41,6 +41,12 @@
 		EED449D92DF4A1D800719FB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449D82DF4A1D800719FB1 /* ContentView.swift */; };
 		EED449DB2DF4A49000719FB1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED449DA2DF4A49000719FB1 /* Launch Screen.storyboard */; };
 		EED449DD2DF4C20100719FB1 /* CornerRadiusExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449DC2DF4C20100719FB1 /* CornerRadiusExtension.swift */; };
+		EED449E92DF5B26800719FB1 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449E82DF5B26800719FB1 /* MovieDetail.swift */; };
+		EED449EB2DF5B27B00719FB1 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449EA2DF5B27B00719FB1 /* Genre.swift */; };
+		EED449ED2DF5B29200719FB1 /* WatchProvidersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449EC2DF5B29200719FB1 /* WatchProvidersResponse.swift */; };
+		EED449EF2DF5B2A300719FB1 /* ProvidersByCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449EE2DF5B2A300719FB1 /* ProvidersByCountry.swift */; };
+		EED449F12DF5B2B000719FB1 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449F02DF5B2B000719FB1 /* Provider.swift */; };
+		EED449F32DF5B2C800719FB1 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED449F22DF5B2C800719FB1 /* MovieDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +105,12 @@
 		EED449D82DF4A1D800719FB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EED449DA2DF4A49000719FB1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EED449DC2DF4C20100719FB1 /* CornerRadiusExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusExtension.swift; sourceTree = "<group>"; };
+		EED449E82DF5B26800719FB1 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		EED449EA2DF5B27B00719FB1 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		EED449EC2DF5B29200719FB1 /* WatchProvidersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProvidersResponse.swift; sourceTree = "<group>"; };
+		EED449EE2DF5B2A300719FB1 /* ProvidersByCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidersByCountry.swift; sourceTree = "<group>"; };
+		EED449F02DF5B2B000719FB1 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		EED449F22DF5B2C800719FB1 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +209,11 @@
 				EECACF982DF372150058FA5C /* MovieResponse.swift */,
 				EECACF9A2DF3724D0058FA5C /* APIMovie.swift */,
 				EED449D42DF4A12900719FB1 /* AppScreen.swift */,
+				EED449E82DF5B26800719FB1 /* MovieDetail.swift */,
+				EED449EA2DF5B27B00719FB1 /* Genre.swift */,
+				EED449EC2DF5B29200719FB1 /* WatchProvidersResponse.swift */,
+				EED449EE2DF5B2A300719FB1 /* ProvidersByCountry.swift */,
+				EED449F02DF5B2B000719FB1 /* Provider.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,6 +231,7 @@
 				EECACFA42DF48A1E0058FA5C /* IntroScreen.swift */,
 				EED449D82DF4A1D800719FB1 /* ContentView.swift */,
 				EED449DA2DF4A49000719FB1 /* Launch Screen.storyboard */,
+				EED449F22DF5B2C800719FB1 /* MovieDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -405,23 +423,29 @@
 				EECACF9E2DF3743B0058FA5C /* Secrets.swift in Sources */,
 				EECACF8F2DF36B0A0058FA5C /* Mood.swift in Sources */,
 				EECACF9B2DF3724D0058FA5C /* APIMovie.swift in Sources */,
+				EED449F32DF5B2C800719FB1 /* MovieDetailView.swift in Sources */,
 				EECACF8D2DF3683E0058FA5C /* SavedMoviesView.swift in Sources */,
 				EECACF862DF300160058FA5C /* MovieCardView.swift in Sources */,
 				EECACFA12DF378FA0058FA5C /* GenreMapping.swift in Sources */,
 				EECACF912DF36B480058FA5C /* MoodSelectionView.swift in Sources */,
 				EED449D52DF4A12900719FB1 /* AppScreen.swift in Sources */,
 				EECACF522DF2FBFE0058FA5C /* MoodiApp.swift in Sources */,
+				EED449ED2DF5B29200719FB1 /* WatchProvidersResponse.swift in Sources */,
 				EECACF882DF364740058FA5C /* SwipeView.swift in Sources */,
 				EECACFA52DF48A1E0058FA5C /* IntroScreen.swift in Sources */,
 				EECACF992DF372150058FA5C /* MovieResponse.swift in Sources */,
 				EECACF972DF36D870058FA5C /* MainTabView.swift in Sources */,
 				EED449DD2DF4C20100719FB1 /* CornerRadiusExtension.swift in Sources */,
 				EECACFA72DF48E030058FA5C /* Color.swift in Sources */,
+				EED449F12DF5B2B000719FB1 /* Provider.swift in Sources */,
+				EED449E92DF5B26800719FB1 /* MovieDetail.swift in Sources */,
 				EECACF802DF2FC570058FA5C /* Movie.swift in Sources */,
 				EECACF952DF36D3D0058FA5C /* RootView.swift in Sources */,
 				EED449D92DF4A1D800719FB1 /* ContentView.swift in Sources */,
+				EED449EB2DF5B27B00719FB1 /* Genre.swift in Sources */,
 				EED449D72DF4A14D00719FB1 /* AppState.swift in Sources */,
 				EECACF8B2DF3663E0058FA5C /* UserDefaults.swift in Sources */,
+				EED449EF2DF5B2A300719FB1 /* ProvidersByCountry.swift in Sources */,
 				EECACF932DF36C0D0058FA5C /* StatefulPreviewWrapper.swift in Sources */,
 				EECACF822DF2FCE90058FA5C /* MovieViewModel.swift in Sources */,
 				EECACFA32DF488220058FA5C /* SplashView.swift in Sources */,
