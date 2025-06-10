@@ -21,9 +21,11 @@ Moodi is an iOS application built in Swift that helps users discover movies base
 
 
 <p align="center">
-  <img src="screenshots/screen1.png" alt="Mood Selection Screen" width="240"/>
-  <img src="screenshots/screen2.png" alt="Swipe Movie Cards" width="240"/>
-  <img src="screenshots/screen3.png" alt="Movie Details" width="240"/>
+  <img src="screenshots/screen1.png" alt="Splash Screen" width="240"/>
+  <img src="screenshots/screen2.png" alt="Mood Selection Screen" width="240"/>
+  <img src="screenshots/screen3.png" alt="Swipe Movies Screen" width="240"/>
+  <img src="screenshots/screen4.png" alt="Movie List Screen" width="240"/>
+  <img src="screenshots/screen5.png" alt="Movie Details" width="240"/>
 </p>
 
 
