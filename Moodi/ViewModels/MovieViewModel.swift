@@ -23,6 +23,8 @@ class MovieViewModel : ObservableObject {
     
     private let apiKey = Secrets.tmdbApiKey
     private let baseURL = "https://api.themoviedb.org/3"
+    private let movieService = MovieService()
+
     
     init() {
         likedMovies = UserDefaults.standard.loadLikedMovies()
@@ -71,41 +73,19 @@ class MovieViewModel : ObservableObject {
       }
     
     private func loadMoviesFromAPI(mood: Mood, page: Int, isInitialLoad: Bool) {
-            let genreIds = mood.genres.compactMap { genreNameToId[$0] }
-            let genresString = genreIds.map(String.init).joined(separator: ",")
-            
-            let sortOptions = ["popularity.desc", "vote_average.desc", "release_date.desc"]
-            let selectedSort = sortOptions.randomElement() ?? "popularity.desc"
-            
-            guard let url = URL(string: "\(baseURL)/discover/movie?api_key=\(apiKey)&with_genres=\(genresString)&sort_by=\(selectedSort)&page=\(page)&vote_count.gte=100") else {
-                print("URL inválida")
-                finishLoading(isInitialLoad: isInitialLoad)
-                return
-            }
+        movieService.fetchMovies(for: mood, page: page) { [weak self] result in
+               guard let self = self else { return }
 
-            URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-                guard let self = self else { return }
-                
-                guard let data = data, error == nil else {
-                    print("Error al obtener películas: \(error?.localizedDescription ?? "Desconocido")")
-                    DispatchQueue.main.async {
-                        self.finishLoading(isInitialLoad: isInitialLoad)
-                    }
-                    return
-                }
-
-                do {
-                    let decoded = try JSONDecoder().decode(MovieResponse.self, from: data)
-                    DispatchQueue.main.async {
-                        self.processNewMovies(decoded, isInitialLoad: isInitialLoad)
-                    }
-                } catch {
-                    print("Error al decodificar JSON: \(error)")
-                    DispatchQueue.main.async {
-                        self.finishLoading(isInitialLoad: isInitialLoad)
-                    }
-                }
-            }.resume()
+               DispatchQueue.main.async {
+                   switch result {
+                   case .success(let response):
+                       self.processNewMovies(response, isInitialLoad: isInitialLoad)
+                   case .failure(let error):
+                       print("Failed to load movies: \(error.localizedDescription)")
+                       self.finishLoading(isInitialLoad: isInitialLoad)
+                   }
+               }
+           }
         }
     
     private func finishLoading(isInitialLoad: Bool) {
@@ -125,40 +105,23 @@ class MovieViewModel : ObservableObject {
        }
     
     private func processNewMovies(_ response: MovieResponse, isInitialLoad: Bool) {
-           totalPages = min(response.total_pages ?? 500, 500)
-           
-           let posterBaseURL = "https://image.tmdb.org/t/p/w500"
-           let newMovies = response.results.compactMap { apiMovie -> Movie? in
-               guard !allSeenMovieIds.contains(apiMovie.id),
-                     !apiMovie.overview.isEmpty,
-                     apiMovie.poster_path != nil else { return nil }
-               
-            let posterURL = URL(string: posterBaseURL + apiMovie.poster_path!)
-               let movieGenres = apiMovie.genre_ids.compactMap { genreIdToName[$0] }
-               return Movie(
-                   id: apiMovie.id,
-                   title: apiMovie.title,
-                   synopsis: apiMovie.overview,
-                   posterURL: posterURL,
-                   genres: movieGenres
-               )
+        totalPages = min(response.total_pages , 500)
+        let newMovies = movieService.transformToMovies(response.results, excludingIds: allSeenMovieIds)
+        
+        if isInitialLoad {
+            self.movies = newMovies.shuffled()
+        } else {
+            self.movies += newMovies
+            self.movies.shuffle()
+        }
+
+        finishLoading(isInitialLoad: isInitialLoad)
+        if newMovies.count < 10 && currentPage < totalPages {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.loadMoreMovies()
+            }
            }
-           
-           if isInitialLoad {
-               self.movies = newMovies.shuffled()
-           } else {
-               let combinedMovies = self.movies + newMovies
-               self.movies = combinedMovies.shuffled()
-           }
-           
-           finishLoading(isInitialLoad: isInitialLoad)
-           
-           if newMovies.count < 10 && currentPage < totalPages {
-               DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                   self.loadMoreMovies()
-               }
-           }
-       }
+    }
 
     func loadMovies(for mood: Mood) {
            guard !isLoading else { return }
