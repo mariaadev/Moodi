@@ -12,7 +12,7 @@ Moodi is an iOS application built in Swift that helps users discover movies base
 
 ## How It Works
 
-1. **Select Your Mood:** Start by choosing how you feel from a list of moods (happy, sad, excited, etc.).
+1. **Select Your Mood:** Start by choosing how you feel from a list of moods (happy, sad, intense, etc.).
 2. **Swipe Through Movies:** Get a stack of movies mapped to your selected mood. Swipe right to save, left to skip.
 3. **View Your List:** Access your saved movies anytime from your personal list.
 4. **Check Details & Streaming Providers:** For each movie, see detailed info and where it's currently available to stream.
