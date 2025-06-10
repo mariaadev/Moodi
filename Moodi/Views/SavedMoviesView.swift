@@ -12,7 +12,8 @@ struct SavedMoviesView: View {
     @State private var showingResetAlert = false
     @State private var selectedMood: Mood? = nil
     @State private var selectedMovie: Movie? = nil
-
+    @State private var showingDeleteConfirmation: Movie?
+    
     private let columns = [
           GridItem(.flexible()),
           GridItem(.flexible())
@@ -186,7 +187,23 @@ struct SavedMoviesView: View {
                     )
             }
             .clipShape(RoundedRectangle(cornerRadius: 8))
+            .onTapGesture {
+                   selectedMovie = movie
+               }
+               .onLongPressGesture {
+                   showingDeleteConfirmation = movie
+               }
+               .confirmationDialog("Do you want to delete this movie from your list?", isPresented: .constant(showingDeleteConfirmation == movie), titleVisibility: .visible) {
+                   Button("Delete", role: .destructive) {
+                       viewModel.removeLikedMovie(movie)
+                       showingDeleteConfirmation = nil
+                   }
+                   Button("Cancel", role: .cancel) {
+                       showingDeleteConfirmation = nil
+                   }
+               }
         }
+        
         }
     }
 

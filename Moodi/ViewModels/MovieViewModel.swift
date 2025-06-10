@@ -122,6 +122,13 @@ class MovieViewModel : ObservableObject {
             }
            }
     }
+    
+    func removeLikedMovie(_ movie: Movie) {
+        likedMovies.removeAll { $0.id == movie.id }
+        UserDefaults.standard.saveLikedMovies(likedMovies)
+        allSeenMovieIds.remove(movie.id)
+    }
+
 
     func loadMovies(for mood: Mood) {
            guard !isLoading else { return }
