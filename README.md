@@ -1,14 +1,14 @@
 # Moodi
 
-Moodi is an iOS application built in Swift that helps users discover movies based on their current mood. Unlike traditional movie recommendation apps, Moodi takes a fun, swipe-based approach—making it easy to find and save films that match how you feel right now.
+Moodi is an iOS application built in Swift that helps users discover movies based on their current mood. Unlike traditional movie recommendation apps, Moodi takes a fun, swipe-based approach making it easy to find and save films that match how you feel right now.
 
 ## Features
 
 - **Mood-Based Recommendations:** Pick your mood and instantly get a curated set of movies tailored for how you feel.
-- **Swipe to Save:** Swipe through movie cards—add favorites to your personal list with a simple swipe.
+- **Swipe to Save:** Swipe through movie cards and add favorites to your personal list with a simple swipe.
 - **Movie Details:** Tap any movie to see its synopsis, cast, and more.
 - **Where to Watch:** Instantly see which streaming platforms offer each movie, powered by the TMDB API.
-- **No Login Required:** Jump right in and start discovering—no account needed (yet)!
+- **No Login Required:** Jump right in and start discovering.
 
 ## How It Works
 
